@@ -1,0 +1,21 @@
+body {
+  margin: 10;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.button_primary {
+  background-color: blue;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.border_type {
+  border-style: solid;
+  border-width: 5px 0 0 5px;
+  border-color: black;
+  width: 500px;
+  padding: 5px;
+}
