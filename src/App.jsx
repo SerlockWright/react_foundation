@@ -7,7 +7,10 @@ import ButtonState from "./components/ButtonState";
 import Alert from "./components/Alert";
 import Form from "./components/Form";
 import ComposeComponent from './pages/ComposeComponent';
+import State from "./pages/State";
+
 function App() {
+  console.log('App Component')
   return (
     <>
       <ComposeComponent />
@@ -53,6 +56,9 @@ function App() {
         From Text
         <Form />
       </Props>
+
+      <h1>State</h1>
+      <State />
     </>
   );
 }

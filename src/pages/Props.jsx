@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types'; // ES6
 
 function Props({
   renderComponentOutside,
@@ -23,3 +23,20 @@ function Props({
 }
 
 export default Props;
+
+Props.propTypes = {
+  renderComponentOutside: PropTypes.element,
+  renderComponentByDirect: PropTypes.elementType,
+  content: PropTypes.string,
+  children: PropTypes.element,
+  title: PropTypes.string,
+  number: PropTypes.number,
+  isAuth: PropTypes.bool,
+  todo: PropTypes.array,
+  // users: PropTypes.object,
+  users: PropTypes.shape({
+    name: PropTypes.string,
+    age: PropTypes.number
+  }),
+  onClick: PropTypes.func
+}
