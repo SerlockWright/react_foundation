@@ -1,11 +1,10 @@
 import React from 'react'
 
-const image1 = "https://placekitten.com/g/64/64";
 
-function Avatar() {
+function Avatar({ imageUrl }) {
     return (
         <div>
-            <img src={image1} alt="image" />
+            <img src={imageUrl} alt="image" />
         </div>
     )
 }
