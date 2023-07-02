@@ -8,6 +8,10 @@ import Alert from "./components/Alert";
 import Form from "./components/Form";
 import ComposeComponent from './pages/ComposeComponent';
 import State from "./pages/State";
+import HandleEvent from "./pages/HandleEvent";
+import ConditionalRendering from "./pages/ConditionalRendering";
+import GuestGreeting from "./pages/GuestGreeting";
+import List from './pages/List';
 
 function App() {
   console.log('App Component')
@@ -59,6 +63,21 @@ function App() {
 
       <h1>State</h1>
       <State />
+      <br />
+      <br />
+
+      <h1>HandleEvent</h1>
+      <HandleEvent />
+      <br />
+
+      <h1>ConditionalRendering</h1>
+      <ConditionalRendering />
+
+      <h1>GuestGreeting</h1>
+      <GuestGreeting />
+
+      <h1>List</h1>
+      <List />
     </>
   );
 }
