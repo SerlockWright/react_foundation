@@ -56,7 +56,7 @@ function State() {
 
   function onChangeUserName(e) {
     // change user name
-    const { value } = e.target.value
+    const { value } = e.target;
 
     // code logic
     setForm((prevState) => {
