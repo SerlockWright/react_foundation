@@ -2,13 +2,13 @@
 // output: MM DD, YYYY
 
 export const formatDate = (date) => {
-  if(!date) return 'No Date';
+  if (!date) return "No Date";
 
-  const res = new Date(date).toLocaleDateString(undefined, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
+  const res = new Date(date).toLocaleDateString("en_US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
-  
+
   return res;
-}
+};
