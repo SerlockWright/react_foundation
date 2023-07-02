@@ -20,7 +20,7 @@ function State() {
     author: {
       name: '',
       id: 1,
-      year: 20 
+      year: 20
     },
     users: {
       id: 2,
@@ -59,6 +59,7 @@ function State() {
     const { value } = e.target.value
 
     // code logic
+
   }
 
   console.log("State Component: ", { number, form });
@@ -68,10 +69,10 @@ function State() {
       Number: {number} <br />
       Title: {title} <br />
       LastName: {form.lastName} <br />
-      <Button 
+      <Button
         buttonText="Increment"
         onClick={handleIncrement}
-        // number={number}
+      // number={number}
       />
 
       <h4>merge & replace object</h4>

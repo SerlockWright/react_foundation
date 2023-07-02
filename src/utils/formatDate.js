@@ -4,7 +4,7 @@
 export const formatDate = (date) => {
   if (!date) return "No Date";
 
-  const res = new Date(date).toLocaleDateString("en_US", {
+  const res = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
     year: "numeric",
