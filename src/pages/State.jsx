@@ -59,6 +59,18 @@ function State() {
     const { value } = e.target.value
 
     // code logic
+    setForm((prevState) => {
+      return {
+        ...prevState,
+        users: {
+          ...prevState.users,
+          infor: {
+            ...prevState.users.infor,
+            name: value
+          }
+        }
+      }
+    })
 
   }
 
