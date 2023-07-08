@@ -1,16 +1,20 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import clsx from 'clsx';
+
 import Button from '../components/Button';
 
 function List() {
   const [title, setTitle] = React.useState('');
   const [todos, setTodos] = React.useState([
-    { title: 'learn javascript'}
+    { title: 'learn javascript', completed: false },
+    { title: 'learn react', completed: false },
+    { title: 'learn angular', completed: false },
   ])
-  // const dataTodo = todos.map(todo => ({
-  //   ...todo,
-  //   id: uuidv4()
-  // }));
+  const dataTodo = todos.map(todo => ({
+    ...todo,
+    id: uuidv4()
+  }));
 
   function onChangeTitle(e) {
     const { value } = e.target;
@@ -22,11 +26,23 @@ function List() {
     setTodos(prevState => {
       const item = {
         title,
+        completed: false,
         id: uuidv4()
       }
       return [...prevState, item]; 
     })
   }
+
+  function handleUpdateCompleted(todoId) {
+    const clonedTodo = JSON.parse(JSON.stringify(dataTodo)); // deep clone
+    const todoIndex = clonedTodo.findIndex(todo => todo.id === todoId);
+    if(todoIndex > -1) {
+      clonedTodo[todoIndex].completed = !clonedTodo[todoIndex].completed;
+      setTodos(clonedTodo);
+    }
+  }
+
+  console.log('todos: ', todos)
 
   return (
     <div>
@@ -37,16 +53,37 @@ function List() {
       />
       {todos.length > 0 ? (
         <>
-          {todos
-            .map(todo => ({
-              ...todo,
-              id: uuidv4()
-            }))
-            .map((todo, index) => {
+          {dataTodo.map((todo) => {
+              // inline style
+              const style = {
+                textDecoration: todo.completed ? 'line-through' : 'none',
+                fontWeight: 'bold'
+              }
               return (
-                <div key={todo.id}>
-                  Title: {todo.title} - {todo.id}
-                </div>
+                <React.Fragment key={todo.id}>
+                  <div >
+                    <div style={style}>
+                      Title: {todo.title} - {todo.id}<br />
+                    </div>
+                    <div 
+                      // className={todo.completed ? 'box border box-solid mention' : 'box border box-solid'}
+                      // className={`box border box-solid ${todo.completed ? 'mention' : ''}`}
+                      className={clsx(
+                        'box border box-solid',
+                        todo.completed && 'mention',
+                        todo.completed ? 'line-through' : 'none',
+                      )}
+                    >
+                      Complete: {todo.completed ? 'true' : 'false'}
+                    </div>
+                    <Button
+                      buttonText='Update Completed'
+                      onClick={() => handleUpdateCompleted(todo.id)}
+                    />
+                    
+                  </div>
+                  <hr />
+                </React.Fragment>
               )
           })}
         </>

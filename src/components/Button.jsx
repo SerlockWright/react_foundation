@@ -3,11 +3,14 @@ import PropTypes from 'prop-types'; // ES6
 
 import Icon from "./Icon";
 
+// styles
+import styles from './button.module.css'
+
 // stateless component (compose component)
 function Button({ buttonText, type = "button", onClick, number }) {
   console.log("Button Component")
   return (
-    <button className="button_primary" type={type} onClick={onClick}>
+    <button className={styles.button_secondary} type={type} onClick={onClick}>
       <Icon />
       
       {buttonText}  {number}

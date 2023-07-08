@@ -1,11 +1,23 @@
 body {
-  margin: 10;
+  margin: 20px;
   min-width: 320px;
   min-height: 100vh;
 }
 
+button {
+  cursor: pointer;
+}
+
 .button_primary {
   background-color: blue;
+  border: 0;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.button_secondary {
+  background-color: #ddff00;
   border: 0;
   padding: 10px;
   border-radius: 5px;
@@ -18,4 +30,8 @@ body {
   border-color: black;
   width: 500px;
   padding: 5px;
+}
+
+.mention {
+  color: red;
 }

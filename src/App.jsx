@@ -12,6 +12,9 @@ import HandleEvent from "./pages/HandleEvent";
 import ConditionalRendering from "./pages/ConditionalRendering";
 import GuestGreeting from "./pages/GuestGreeting";
 import List from './pages/List';
+import LiftingStateUp from './pages/LiftingStateUp';
+import LiftingStateUpPattern from './pages/LiftingStateUpPattern';
+import FormComponent from './pages/Form';
 
 function App() {
   console.log('App Component')
@@ -78,6 +81,15 @@ function App() {
 
       <h1>List</h1>
       <List />
+
+      <h1>Lifting State Up</h1>
+      <LiftingStateUp />
+
+      <h1>LiftingStateUpPattern</h1>
+      <LiftingStateUpPattern />
+
+      <h1>Form</h1>
+      <FormComponent />
     </>
   );
 }
