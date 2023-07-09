@@ -15,6 +15,8 @@ import List from './pages/List';
 import LiftingStateUp from './pages/LiftingStateUp';
 import LiftingStateUpPattern from './pages/LiftingStateUpPattern';
 import FormComponent from './pages/Form';
+import BoxColor from "./pages/BoxColor";
+import StateHook from './pages/StateHook';
 
 function App() {
   console.log('App Component')
@@ -90,6 +92,13 @@ function App() {
 
       <h1>Form</h1>
       <FormComponent />
+
+      <h1>Sample App: BoxColor</h1>
+      <BoxColor />
+
+      <br />
+      <h1>StateHook</h1>
+      <StateHook />
     </>
   );
 }

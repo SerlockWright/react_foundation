@@ -15,7 +15,8 @@ function LogoutButton() {
 
 
 function ConditionalRendering() {
-  const [isAuth, setIsAuth] = React.useState(false);
+  const [isAuth, setIsAuth] = React.useState(true);
+  const [, setNumber] = React.useState(0);
   let RenderButton = LoginButton // element type
 
   if(isAuth) {
@@ -28,12 +29,13 @@ function ConditionalRendering() {
     )
   }
 
+  console.log('ConditionalRendering: ')
   return (
     <div>
       User: {isAuth && (
         <div>Loginded jsx</div>
       )} 
-      
+
       <br />
       isAuth: {isAuth || 'please login'}
 
@@ -49,7 +51,10 @@ function ConditionalRendering() {
       <br />
       <Button 
         buttonText='Login' 
-        onClick={() => setIsAuth(prevState => !prevState)} // toggle action 
+        onClick={() => {
+          setIsAuth(prevState => !prevState);
+          setNumber(1)
+        }} // toggle action 
       />
     </div>
   )
