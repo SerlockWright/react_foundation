@@ -1,0 +1,42 @@
+.block {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.color {
+  position: relative;
+  display: block;
+}
+
+.color span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.red {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+}
+
+.yellow {
+  background-color: yellow;
+  height: 100px;
+  width: 100px;
+}
+
+.aqua {
+  background-color: aqua;
+  height: 100px;
+  width: 100px;
+}
+
+.purple {
+  background-color: purple;
+  height: 100px;
+  width: 100px;
+}

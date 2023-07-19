@@ -29,14 +29,14 @@ function List() {
         completed: false,
         id: uuidv4()
       }
-      return [...prevState, item]; 
+      return [...prevState, item];
     })
   }
 
   function handleUpdateCompleted(todoId) {
     const clonedTodo = JSON.parse(JSON.stringify(dataTodo)); // deep clone
     const todoIndex = clonedTodo.findIndex(todo => todo.id === todoId);
-    if(todoIndex > -1) {
+    if (todoIndex > -1) {
       clonedTodo[todoIndex].completed = !clonedTodo[todoIndex].completed;
       setTodos(clonedTodo);
     }
@@ -47,44 +47,44 @@ function List() {
   return (
     <div>
       <input type="text" onChange={onChangeTitle} />
-      <Button 
-        buttonText='Add Todo' 
+      <Button
+        buttonText='Add Todo'
         onClick={handleAddTodo}
       />
       {todos.length > 0 ? (
         <>
           {dataTodo.map((todo) => {
-              // inline style
-              const style = {
-                textDecoration: todo.completed ? 'line-through' : 'none',
-                fontWeight: 'bold'
-              }
-              return (
-                <React.Fragment key={todo.id}>
-                  <div >
-                    <div style={style}>
-                      Title: {todo.title} - {todo.id}<br />
-                    </div>
-                    <div 
-                      // className={todo.completed ? 'box border box-solid mention' : 'box border box-solid'}
-                      // className={`box border box-solid ${todo.completed ? 'mention' : ''}`}
-                      className={clsx(
-                        'box border box-solid',
-                        todo.completed && 'mention',
-                        todo.completed ? 'line-through' : 'none',
-                      )}
-                    >
-                      Complete: {todo.completed ? 'true' : 'false'}
-                    </div>
-                    <Button
-                      buttonText='Update Completed'
-                      onClick={() => handleUpdateCompleted(todo.id)}
-                    />
-                    
+            // inline style
+            const style = {
+              textDecoration: todo.completed ? 'line-through' : 'none',
+              fontWeight: 'bold'
+            }
+            return (
+              <React.Fragment key={todo.id}>
+                <div >
+                  <div style={style}>
+                    Title: {todo.title} - {todo.id}<br />
                   </div>
-                  <hr />
-                </React.Fragment>
-              )
+                  <div
+                    // className={todo.completed ? 'box border box-solid mention' : 'box border box-solid'}
+                    // className={`box border box-solid ${todo.completed ? 'mention' : ''}`}
+                    className={clsx(
+                      'box border box-solid',
+                      todo.completed && 'mention',
+                      todo.completed ? 'line-through' : 'none',
+                    )}
+                  >
+                    Complete: {todo.completed ? 'true' : 'false'}
+                  </div>
+                  <Button
+                    buttonText='Update Completed'
+                    onClick={() => handleUpdateCompleted(todo.id)}
+                  />
+
+                </div>
+                <hr />
+              </React.Fragment>
+            )
           })}
         </>
       ) : (
