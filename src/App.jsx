@@ -17,6 +17,7 @@ import LiftingStateUpPattern from './pages/LiftingStateUpPattern';
 import FormComponent from './pages/Form';
 import BoxColor from "./pages/BoxColor";
 import StateHook from './pages/StateHook';
+import UseReducer from './pages/UseReducer';
 
 function App() {
   console.log('App Component')
@@ -99,6 +100,10 @@ function App() {
       <br />
       <h1>StateHook</h1>
       <StateHook />
+
+      <br />
+      <h1>UseReducer</h1>
+      <UseReducer />
     </>
   );
 }
