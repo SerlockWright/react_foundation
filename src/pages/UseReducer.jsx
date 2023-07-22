@@ -2,8 +2,8 @@ import React from 'react'
 import Button from '../components/Button';
 
 // reducer
-import { reducer, initialState } from '../reducers/counterReducer';
-import { increment, decrement, showLoading, hideLoading } from '../actions/counterActions';
+import { reducer, initialState } from '../reducers/count.reducer';
+import { increment, decrement, showLoading, hideLoading } from '../reducers/count.action';
 
 function UseReducer() {
   const [{ count, isLoading }, dispatch] = React.useReducer(reducer, initialState)
