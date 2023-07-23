@@ -8,7 +8,6 @@ import styles from './button.module.css'
 
 // stateless component (compose component)
 function Button({ buttonText, type = "button", onClick, number }) {
-  console.log("Button Component")
   return (
     <button className={styles.button_secondary} type={type} onClick={onClick}>
       <Icon />

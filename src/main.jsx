@@ -5,6 +5,10 @@ import App from './App.jsx'
 // styles
 import './index.css'
 
+import { AppProvider } from './contexts/AppContext';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
+  <AppProvider>
+    <App />
+  </AppProvider>
 )

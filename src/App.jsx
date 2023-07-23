@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import React from "react";
 import { Issue, IssueCreate, IssueEdit } from "./pages/Issues";
 import StatelessComponent from "./pages/StatelessComponent";
 import StatefullComponent from "./pages/StatefullComponent";
@@ -18,9 +19,17 @@ import FormComponent from './pages/Form';
 import BoxColor from "./pages/BoxColor";
 import StateHook from './pages/StateHook';
 import UseReducer from './pages/UseReducer';
+import EffectHook from './pages/EffectHook';
+import Button from "./components/Button";
+import Books from "./pages/Books";
+
+// context
+import { BookProvider } from "./contexts/BookContext";
 
 function App() {
   console.log('App Component')
+  const [isMount, setIsMount] = React.useState(true)
+
   return (
     <>
       <ComposeComponent />
@@ -104,6 +113,18 @@ function App() {
       <br />
       <h1>UseReducer</h1>
       <UseReducer />
+
+      <br />
+      <h1>Effect Hooks</h1>
+      <Button buttonText='Toggle Mount' onClick={(preState) => setIsMount(!preState)} />
+      <br />
+      {isMount && <EffectHook />}
+
+      <br />
+      <h1>Book Context</h1>
+      <BookProvider>
+        <Books />
+      </BookProvider>
     </>
   );
 }
