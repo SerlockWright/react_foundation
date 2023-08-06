@@ -22,9 +22,11 @@ import UseReducer from './pages/UseReducer';
 import EffectHook from './pages/EffectHook';
 import Button from "./components/Button";
 import Books from "./pages/Books";
+import UseRef from "./pages/UseRef";
 
 // context
 import { BookProvider } from "./contexts/BookContext";
+import UseImperativeHandle from "./pages/UseImperativeHandle";
 
 function App() {
   console.log('App Component')
@@ -125,6 +127,12 @@ function App() {
       <BookProvider>
         <Books />
       </BookProvider>
+
+      <br />
+      <UseRef />
+
+      <br />
+      <UseImperativeHandle />
     </>
   );
 }
