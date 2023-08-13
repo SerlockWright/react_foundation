@@ -23,6 +23,7 @@ import EffectHook from './pages/EffectHook';
 import Button from "./components/Button";
 import Books from "./pages/Books";
 import UseRef from "./pages/UseRef";
+import Memo from './pages/Memo';
 
 // context
 import { BookProvider } from "./contexts/BookContext";
@@ -133,6 +134,10 @@ function App() {
 
       <br />
       <UseImperativeHandle />
+
+      <br />
+      <hr />
+      <Memo />
     </>
   );
 }
