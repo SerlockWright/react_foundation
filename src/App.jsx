@@ -24,6 +24,7 @@ import Button from "./components/Button";
 import Books from "./pages/Books";
 import UseRef from "./pages/UseRef";
 import Memo from './pages/Memo';
+import CustomHook from './pages/CustomHook';
 
 // context
 import { BookProvider } from "./contexts/BookContext";
@@ -138,6 +139,10 @@ function App() {
       <br />
       <hr />
       <Memo />
+
+      <br/> 
+      <hr />
+      <CustomHook />
     </>
   );
 }
