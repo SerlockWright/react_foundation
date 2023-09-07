@@ -15,7 +15,7 @@ function Memo() {
 
   const [carts, setCarts] = React.useState([{ price: 10, quatity: 2}]);
 
-  console.log("rende Memo ------> :")
+  console.log("render Memo ------> :")
 
   // re-create new function when component re-render (A)
   // const updateTime = () => {}
