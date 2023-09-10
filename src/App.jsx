@@ -41,7 +41,7 @@ function App() {
       <h1>React</h1>
       <Issue />
       <h2>Stateless Component</h2>
-      <StatelessComponent />
+      <StatelessComponent todoId="1" />
       <h2>Statefull Component</h2>
       <StatefullComponent />
       <hr />

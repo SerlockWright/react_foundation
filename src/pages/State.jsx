@@ -111,3 +111,27 @@ const colors = ['red', 'green', 'blue'];
 const [, blue] = colors;
 
 */
+
+
+/*
+mergeobject
+const objA = { 
+  firstName: 'truong',
+  lastname: 'abc'
+}
+
+const objB = { 
+  firstName: 'eqw',
+  lastname: '31'
+}
+
+const merged = {...objectA, ...objectB}
+
+
+replace object
+const objC = {
+  ...objA,
+  age: 18
+}
+
+*/

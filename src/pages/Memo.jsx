@@ -1,6 +1,8 @@
 import React, { memo } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 import MemoComponent from '../components/MemoComponent';
+import { addTodo } from '../states/todo.action';
 
 /*
 - Khi component A đã dc wrapper bởi React.memo. Và component A này nhận vào 1 cái props là một function A
@@ -12,10 +14,12 @@ import MemoComponent from '../components/MemoComponent';
 function Memo() {
   const [forceUpdate, setForceUpdate] = React.useState(Date.now());
   const [count, setCount] = React.useState(0);
+	const dispatch = useDispatch();
+	const todos = useSelector(state => state.todo.todos)
 
   const [carts, setCarts] = React.useState([{ price: 10, quatity: 2}]);
 
-  console.log("rende Memo ------> :")
+  console.log("rende Memo ------> :", todos)
 
   // re-create new function when component re-render (A)
   // const updateTime = () => {}
@@ -38,23 +42,34 @@ function Memo() {
   return (
     <div>
       <h3>Memo</h3>
-		  <button onClick={() => setCount(prevState => prevState + 1)}>Increment</button>
-		  <button onClick={() => setCount(prevState => prevState - 1)}>Decrement</button>
-		  <button onClick={() => setForceUpdate(Date.now())}>Force Update</button>
-	    <button onClick={() => {
-	    	const newProduct = { price: 20, quatity: 1}
-	   	 	setCarts(prevState => ([...prevState, newProduct]))
-	     }}
-	    >
-		   Add to Cart
-		  </button>
+				<button onClick={() => setCount(prevState => prevState + 1)}>Increment</button>
+				<button onClick={() => setCount(prevState => prevState - 1)}>Decrement</button>
+				<button onClick={() => setForceUpdate(Date.now())}>Force Update</button>
+				<button onClick={() => {
+					const newProduct = { price: 20, quatity: 1}
+					setCarts(prevState => ([...prevState, newProduct]))
+					const todos = [
+						{
+							id: 1,
+							title: 'javascript'
+						},
+						{
+							id: 2,
+							title: 'angular'
+						}
+					]
+					dispatch(addTodo(todos))
+				}}
+				>
+				Add to Cart
+				</button>
 
-		  Count: {count} <br />
-		  Total: {total} <br />
-		  price: {price}
-	   <br />
+				Count: {count} <br />
+				Total: {total} <br />
+				price: {price}
+			<br />
 
-		  <MemoComponent forceUpdate={forceUpdate} updateTime={updateTime}  />
+			<MemoComponent forceUpdate={forceUpdate} updateTime={updateTime}  />
 
     </div>
   )
