@@ -29,6 +29,11 @@ import CustomHook from './pages/CustomHook';
 // context
 import { BookProvider } from "./contexts/BookContext";
 import UseImperativeHandle from "./pages/UseImperativeHandle";
+import { Link, NavLink ,Route, Routes } from "react-router-dom";
+import User from "./pages/User/User";
+import Profile from "./pages/User/Profile";
+import Account from "./pages/User/Account";
+import Cart from "./pages/User/Cart";
 
 function App() {
   console.log('App Component')
@@ -36,14 +41,37 @@ function App() {
 
   return (
     <>
-      <ComposeComponent />
+
+      <Link to="/compose-component">Compose Component</Link>
+      <Link to="/stateless-component">Stateless Component</Link>
+      <NavLink 
+        to="/statefull-component" 
+        // className="navLink"
+        className={value => {
+          return `navLink ${value.isActive ? 'selected' : 'unselected'}`
+        }}        
+        replace
+      >
+        Statefull Component
+      </NavLink>
+      <NavLink to="/user">
+        User
+      </NavLink>
+
       <hr />
-      <h1>React</h1>
-      <Issue />
-      <h2>Stateless Component</h2>
-      <StatelessComponent todoId="1" />
-      <h2>Statefull Component</h2>
-      <StatefullComponent />
+      <main>
+        <Routes>
+          <Route path="/compose-component" element={<ComposeComponent />} />
+          <Route path="/stateless-component" element={<StatelessComponent />} />
+          <Route path="/statefull-component" element={<StatefullComponent />} />
+          <Route path="/user" element={<User />}>
+            <Route path="profile" element={<Profile />} />
+            <Route path="account" element={<Account />} />
+            <Route path="cart" element={<Cart />} />
+          </Route>
+        </Routes>
+      </main>
+      
       <hr />
       <h2>Props</h2>
       <Props
