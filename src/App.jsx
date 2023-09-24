@@ -25,6 +25,7 @@ import Books from "./pages/Books";
 import UseRef from "./pages/UseRef";
 import Memo from './pages/Memo';
 import CustomHook from './pages/CustomHook';
+import AuthRouter from './components/AuthRouter';
 
 // context
 import { BookProvider } from "./contexts/BookContext";
@@ -34,6 +35,9 @@ import User from "./pages/User/User";
 import Profile from "./pages/User/Profile";
 import Account from "./pages/User/Account";
 import Cart from "./pages/User/Cart";
+import UserDetail from "./pages/User/UserDetail";
+import Login from "./pages/User/Login";
+import GuestRouter from "./components/GuestRouter";
 
 function App() {
   console.log('App Component')
@@ -64,11 +68,13 @@ function App() {
           <Route path="/compose-component" element={<ComposeComponent />} />
           <Route path="/stateless-component" element={<StatelessComponent />} />
           <Route path="/statefull-component" element={<StatefullComponent />} />
-          <Route path="/user" element={<User />}>
+          <Route path="/user" element={<AuthRouter><User /></AuthRouter>}>
             <Route path="profile" element={<Profile />} />
             <Route path="account" element={<Account />} />
             <Route path="cart" element={<Cart />} />
+            <Route path=":id" element={<UserDetail />} />
           </Route>
+          <Route path="/login" element={<GuestRouter><Login /></GuestRouter>} />
         </Routes>
       </main>
       

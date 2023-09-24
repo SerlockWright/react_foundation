@@ -1,11 +1,14 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 
 function User() {
+  const navigate = useNavigate();
+
   return (
     <div>
       First Name: tony <br />
       Last Name: Nguyen <br />
+      Go to Detail: <button onClick={() => navigate('/user/123')}>View Detaiil</button>
 
       <br />
 

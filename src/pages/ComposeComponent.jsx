@@ -1,4 +1,5 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 import Avatar from '../components/Avatar'
 import Content from '../components/Content'
 
@@ -9,6 +10,9 @@ function ComposeComponent() {
     const date = new Date().toString();
     const imageUrl = "https://placekitten.com/g/64/64";
     const formattedDate = formatDate(date);
+    const location = useLocation();
+
+    console.log('useLocation: ', location)
 
     return (
         <>
