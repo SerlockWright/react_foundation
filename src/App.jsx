@@ -38,6 +38,7 @@ import Cart from "./pages/User/Cart";
 import UserDetail from "./pages/User/UserDetail";
 import Login from "./pages/User/Login";
 import GuestRouter from "./components/GuestRouter";
+import ReactPortal from "./pages/ReactPortal";
 
 function App() {
   console.log('App Component')
@@ -61,6 +62,9 @@ function App() {
       <NavLink to="/user">
         User
       </NavLink>
+      <NavLink to="/react-portal">
+        React Portal
+      </NavLink>
 
       <hr />
       <main>
@@ -75,6 +79,7 @@ function App() {
             <Route path=":id" element={<UserDetail />} />
           </Route>
           <Route path="/login" element={<GuestRouter><Login /></GuestRouter>} />
+          <Route path="/react-portal" element={<ReactPortal />} />
         </Routes>
       </main>
       

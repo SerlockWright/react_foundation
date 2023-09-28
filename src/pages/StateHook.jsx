@@ -14,11 +14,20 @@ function StateHook() {
 
   const [todos, setTodos] = React.useState(createInitialTodo); // Passing the initializer function: you’re passing createInitialTodos, which is the function itself. If you pass a function to useState, React will only call it during initialization.
 
+  function handleForceUpdate() {
+    setForceUpdate(Date.now())
+    setTodos([
+      { title: 'javascript' , id: 1},
+      { title: 'react', id: 2}
+    ])
+    //...
+  }
+
   console.log('StateHook ------------>', todos)
   return (
     <div>
       <h5>Test force update</h5>
-      <Button buttonText='Force Update' onClick={() => setForceUpdate(Date.now())} />
+      <Button buttonText='Force Update' onClick={handleForceUpdate} />
 
       <h5>Closure  useState</h5>
       <div>Refer:

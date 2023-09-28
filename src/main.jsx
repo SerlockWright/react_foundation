@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App.jsx'
 
 // styles
@@ -13,11 +13,15 @@ import { AppProvider } from './contexts/AppContext';
 // store
 import { store } from './store/index.js';
 
+import ErrorBoundaryWrapper from './components/ErrorBoundary.jsx';
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Router> 
     <Provider store={store}>
       <AppProvider>
-        <App />
+        <ErrorBoundaryWrapper>
+          <App />
+        </ErrorBoundaryWrapper>
       </AppProvider>
     </Provider>
   </Router>
