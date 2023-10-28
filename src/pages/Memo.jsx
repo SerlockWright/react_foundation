@@ -25,9 +25,18 @@ function Memo() {
   // const updateTime = () => {}
 
   // use callback A
+	// first render: memory A
+	// next render: memory A
+	// next render X -> update count: memory X
 	const updateTime = React.useCallback(() => {
 		console.log('fucntion updateTime: ', count); // 0
 	}, [count])
+
+ // first render: memory A
+ // next render: memory X
+	// const updateTime = () => {
+	// 	console.log('fucntion updateTime: ', count); // 0
+	// }
 
 	// return memorized value
 	const total = React.useMemo(() => {
@@ -35,9 +44,14 @@ function Memo() {
 	}, [count])
 
 	// update cart
+	// price : memony A
 	const price = React.useMemo(() => {
 		return carts.reduce((acc, currItem) => acc += currItem.price * currItem.quatity, 0);
 	}, [carts])
+
+	const label  = <div>dasdsadsa</div>
+
+	console.log('memo: ', MemoComponent)
 
   return (
     <div>
@@ -69,7 +83,7 @@ function Memo() {
 				price: {price}
 			<br />
 
-			<MemoComponent forceUpdate={forceUpdate} updateTime={updateTime}  />
+			<MemoComponent updateTime={updateTime} count={count}  />
 
     </div>
   )

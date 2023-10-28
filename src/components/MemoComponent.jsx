@@ -1,14 +1,14 @@
 import React, { memo } from 'react'
 
 
-function MemoComponent({ updateTime }) {
+function MemoComponent() {
   console.log("rende child MemoComponent ------> :")
 
   return (
     <div>
      This is child MemoComponent
 
-     <button onClick={updateTime}>UpdateTime</button>
+     <button >UpdateTime</button>
 
     </div>
   )
